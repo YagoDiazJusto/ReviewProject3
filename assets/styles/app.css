@@ -1,0 +1,15 @@
+body {
+    background-color: lightgray;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.notes{
+    display: flex;
+    flex-direction: column;
+}
+.descripciones{
+    display: flex;
+    flex-direction: column;
+}

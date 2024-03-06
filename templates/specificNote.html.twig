@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	Specific Note
+{% endblock %}
+{% block body %}
+	Description:{{note.description}}
+	CreatedAt:{{note.createdAt|date("Y-m-d")}}
+	Category:{{category.description}}
+	ImageFile{{image}}
+	PrettyDate:{{prettyDate}}
+{% endblock %}

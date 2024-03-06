@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	AllNotes
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="notes">
+			{% for note in notes %}
+				Description:{{note.description}}
+				CreatedAt:{{note.createdAt|date("Y-m-d")}}
+				<button>
+					<a href="{{path('deleteNote',{ description:note.description })}}">Delete</a>
+				</button>
+				<button>
+					<a href="{{path('updateNote',{ description:note.description })}}">Update</a>
+				</button>
+			{% endfor %}
+		</div>
+		<div class="descripciones">
+			{% for description in descriptions %}
+				{{description}}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

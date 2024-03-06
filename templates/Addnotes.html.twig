@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Notes
+{% endblock %}
+{% block body %}
+	{% for message in app.flashes('success') %}
+		<div style="color: green">{{ message }}</div>
+	{% endfor %}
+
+	{{ form_start(form) }}
+	<div>{{ form_errors(form)}}</div>
+	<div>
+		{{ form_label(form.description, 'Please enter the description') }}
+	</div>
+	<div>
+		{{ form_widget(form.description, {'attr': {'style': 'color: gray'}})}}
+	</div>
+	<div>
+		{{ form_label(form.createdAt, 'Please enter the date') }}
+	</div>
+	<div>
+		{{ form_widget(form.createdAt)}}
+	</div>
+	<div>
+		{{ form_label(form.idCategory, 'Please select a category') }}
+	</div>
+	<div>
+		{{ form_row(form.idCategory)}}
+	</div>
+	{{ form_end(form) }}
+
+{% endblock %}
